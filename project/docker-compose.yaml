@@ -1,0 +1,9 @@
+services:
+  api:
+    build: .
+    networks:
+      - api-net
+
+networks:
+  api-net:
+    driver: bridge
