@@ -1,9 +1,35 @@
 services:
-  api:
-    build: .
+  # api:
+  #   build: .
+  #   depends_on:
+  #     - db
+  #   networks:
+  #     - api-net
+
+  db:
+    image: postgres:16
+    container_name: db
+    restart: always
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_PASSWORD: admin
+      PGDATA: /var/lib/postgresql/data/pgdata
+    volumes:
+      - db_data:/var/lib/postgresql/data
+      - ./scripts:/docker-entrypoint-initdb.d
     networks:
       - api-net
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+      start_period: 5s
 
 networks:
   api-net:
     driver: bridge
+
+volumes:
+  db_data:
