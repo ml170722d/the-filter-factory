@@ -1,7 +1,7 @@
 services:
   api:
-    # build: ./the-filter-factory
-    image: api:latest
+    build: ./the-filter-factory
+    # image: api:latest
     container_name: api
     restart: always
     # ports:
@@ -11,30 +11,35 @@ services:
     networks:
       - api-net
     healthcheck:
-      test: ["CMD-SHELL", "curl localhost:8000/health"]
-      interval: 10s
-      timeout: 5s
+      test:
+       - "CMD-SHELL"
+       - "python3"
+       - "-c"
+       - "'import urllib.request; urllib.request.urlopen(\"http://localhost:8000/health\")'"
+      interval: 5s
+      timeout: 3s
       retries: 3
       start_period: 5s
     depends_on:
       - db
 
   lb:
-    image: nginx:1.27.5-alpine-slim
+    image: nginx:1.27.5-alpine
     container_name: lb
-    restart: always
+    restart: no
     ports:
       - "80:80"
       # - "443:443"
     volumes:
-      - ./config/certs:/etc/nginx/certs:ro
-      - ./config/nginx:/etc/nginx/conf.d:ro
+      # - ./config/certs:/etc/nginx/certs:ro
+      - ./config/nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./config/nginx/conf.d:/etc/nginx/conf.d:ro
     networks:
       - api-net
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost"]
-      interval: 30s
-      timeout: 10s
+      test: ["CMD", "curl", "-f", "http://localhost/status"]
+      interval: 5s
+      timeout: 3s
       retries: 3
     depends_on:
       - api
@@ -63,6 +68,3 @@ services:
 networks:
   api-net:
     driver: bridge
-
-# volumes:
-#   db_data:
