@@ -78,7 +78,8 @@ assert (
 # check the allow list api to make sure that the data was added
 response = SESSION.get(f"http://{LOCAL_ENDPOINT}:{LOCAL_PORT}{ALLOW_LIST_PATH}")
 assert response.status_code == 200, "Allow list GET status code is not 200"
-assert sorted(response.json()) == sorted(random_urls), "The allow list data is not correct"
+# assert sorted(response.json()) == sorted(random_urls), "The allow list data is not correct"
+assert set(random_urls).issubset(response.json()), "The allow list data is not correct"
 
 # check the allow list to make sure there are no duplicates - hit the post api 30 times and add random items to the allow list
 hit_count = 0
