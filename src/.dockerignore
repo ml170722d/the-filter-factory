@@ -1,0 +1,6 @@
+.env
+*.sample
+.gitignore
+.venv
+*.md
+__pycache__
