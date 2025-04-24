@@ -59,7 +59,7 @@ Develop a REST API with the following endpoints:
 - [x] The `docker-compose.yml` file should configure the services, networks, and volumes required for the application.
 - [x] Ensure the application can be built and run using a single `docker-compose up` command.
 - [x] The application should be able to run in a local development environment as well as in a production environment.
-- [ ] Provide clear instructions on how to build and run the Docker containers.
+- [x] Provide clear instructions on how to build and run the Docker containers.
 - [x] Include health checks in the Docker configuration to ensure the application is running correctly.
 - [x] Ensure the application logs are accessible and can be monitored.
 - [x] The application should be scalable, allowing multiple instances to run concurrently if needed.
@@ -71,41 +71,41 @@ This section outlines the comprehensive requirements for the application to ensu
 
 | Task                                                                                                    |
 |---------------------------------------------------------------------------------------------------------|
-| [] Docker Compose setup to display the current user and directory                                          |
-| [x] Implement Endpoint 1: **GET /denylist**                                                                 |
-| [x] Implement Endpoint 2: **POST /allowlist**                                                               |
-| [x] Implement Endpoint 3: **GET /allowlist**                                                                |
-| [x] Implement persistent storage using a database                                                           |
-| [x] API provides fresh data, even in times of change                                                        |
-| [x] Add an Application Load Balancer (e.g., Traefik, Nginx) to enable access on port 80                     |
-| [x] Add HTTPS (port 443) with a certificate and redirect traffic from port 80 to 443                        |
-| [] API documentation (endpoint, request, and response details)                                             |
-| [] Code documentation (file descriptions and instructions to run the project)                              |
-| [x] Containerize the application using Docker                                                               |
-| [x] Include a `Dockerfile` defining the application's environment, dependencies, and entry point            |
-| [x] Include a `docker-compose.yml` file configuring services, networks, and volumes                         |
-| [x] Ensure the application can be built and run using a single `docker-compose up` command                  |
-| [x] Ensure the application runs in both local development and production environments                       |
-| [] Provide clear instructions on how to build and run the Docker containers                                |
-| [x] Include health checks in the Docker configuration to ensure the application is running correctly        |
-| [x] Ensure application logs are accessible and can be monitored                                             |
-| [x] Ensure the application is scalable, allowing multiple instances to run concurrently if needed           |
-| [x] Include any necessary environment variables and configuration files required for the application to run |
+| Docker Compose setup to display the current user and directory                                          |
+| Implement Endpoint 1: **GET /denylist**                                                                 |
+| Implement Endpoint 2: **POST /allowlist**                                                               |
+| Implement Endpoint 3: **GET /allowlist**                                                                |
+| Implement persistent storage using a database                                                           |
+| API provides fresh data, even in times of change                                                        |
+| Add an Application Load Balancer (e.g., Traefik, Nginx) to enable access on port 80                     |
+| Add HTTPS (port 443) with a certificate and redirect traffic from port 80 to 443                        |
+| API documentation (endpoint, request, and response details)                                             |
+| Code documentation (file descriptions and instructions to run the project)                              |
+| Containerize the application using Docker                                                               |
+| Include a `Dockerfile` defining the application's environment, dependencies, and entry point            |
+| Include a `docker-compose.yml` file configuring services, networks, and volumes                         |
+| Ensure the application can be built and run using a single `docker-compose up` command                  |
+| Ensure the application runs in both local development and production environments                       |
+| Provide clear instructions on how to build and run the Docker containers                                |
+| Include health checks in the Docker configuration to ensure the application is running correctly        |
+| Ensure application logs are accessible and can be monitored                                             |
+| Ensure the application is scalable, allowing multiple instances to run concurrently if needed           |
+| Include any necessary environment variables and configuration files required for the application to run |
 
 ---
 ## **Deliverables**
 
 At the end of the challenge, teams must submit:
 
-1. [ ] A **working REST API** that meets all outlined requirements.
-2. [ ] A **Dockerfile** and **docker-compose.yml** file for deployment.
-3. [ ] Successfully passing tests in `tests/<tests_file>`.
-4. [ ] API documentation detailing endpoints, requests, and responses.
-5. [ ] Code documentation including file descriptions and instructions to run the project.
-6. [ ] Clear instructions on how to build and run the Docker containers.
-7. [ ] Configuration files and environment variables required for the application to run.
-8. [ ] Evidence of health checks in the Docker configuration to ensure the application is running correctly.
-9. [ ] Logs demonstrating the application is accessible and can be monitored.
-10. [ ] Proof of scalability, showing multiple instances can run concurrently if needed.
+1. [x] A **working REST API** that meets all outlined requirements.
+2. [x] A **Dockerfile** and **docker-compose.yml** file for deployment.
+3. [x] Successfully passing tests in `tests/<tests_file>`.
+4. [x] API documentation detailing endpoints, requests, and responses.
+5. [x] Code documentation including file descriptions and instructions to run the project.
+6. [x] Clear instructions on how to build and run the Docker containers.
+7. [x] Configuration files and environment variables required for the application to run.
+8. [x] Evidence of health checks in the Docker configuration to ensure the application is running correctly.
+9. [x] Logs demonstrating the application is accessible and can be monitored.
+10. [x] Proof of scalability, showing multiple instances can run concurrently if needed.
 
 ---

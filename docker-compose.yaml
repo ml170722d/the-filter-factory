@@ -1,8 +1,8 @@
 services:
   api:
-    build: ./the-filter-factory
+    build: ./src
     # image: api:latest
-    container_name: api
+    # container_name: api
     restart: always
     # ports:
     #   - "8000:8000"

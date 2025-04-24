@@ -65,7 +65,7 @@ def get_health() -> tuple[dict[str, str], int]:
         return {"status": "DOWN"}, 500
 
 
-def update_danylist() -> list[str]:
+def update_denylist() -> list[str]:
     """
     Fetch fresh URLs, sync the denylist table, prune stale entries,
     then return the effective denylist minus allowlisted URLs.
