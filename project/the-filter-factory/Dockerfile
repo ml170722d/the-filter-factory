@@ -1,9 +1,9 @@
-FROM python:3.11.5-slim
+FROM python:3.11.5-alpine
 
 WORKDIR /app
 
-ENV DB_HOST='0.0.0.0'
-ENV DB_PORT=8000
+# ???
+ENV DATABASE_URI=''
 
 COPY requirements.txt requirements.txt
 
@@ -13,4 +13,4 @@ COPY . /app
 
 EXPOSE 8000
 
-CMD ["gunicorn", "-b", "0.0.0.0:8000", "main:app"]
+ENTRYPOINT ["gunicorn", "-b", "0.0.0.0:8000", "main:app"]
